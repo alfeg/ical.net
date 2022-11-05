@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Ical.Net.DataTypes;
 
 namespace Ical.Net.CalendarComponents
 {
-    public interface IRecurrable : IGetOccurrences, IServiceProvider
+    public interface IRecurrable : IGetOccurrences
     {
         /// <summary>
         /// Gets/sets the start date/time of the component.
@@ -15,5 +16,6 @@ namespace Ical.Net.CalendarComponents
         IList<PeriodList> RecurrenceDates { get; set; }
         IList<RecurrencePattern> RecurrenceRules { get; set; }
         IDateTime RecurrenceId { get; set; }
+        object GetService(Type type);
     }
 }

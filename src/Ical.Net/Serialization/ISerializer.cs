@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ical.Net.Serialization
 {
-    public interface ISerializer : IServiceProvider
+    public interface ISerializer 
     {
         SerializationContext SerializationContext { get; set; }
 
