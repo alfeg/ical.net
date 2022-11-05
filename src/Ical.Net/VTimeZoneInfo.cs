@@ -50,6 +50,17 @@ namespace Ical.Net
             return base.Equals(obj);
         }
 
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = TimeZoneName?.GetHashCode() ?? 0;
+                hashCode = (hashCode * 397) ^ OffsetFrom?.GetHashCode() ?? 0;
+                hashCode = (hashCode * 397) ^ OffsetTo?.GetHashCode() ?? 0;
+                return hashCode;
+            }
+        }
+
         public virtual string TzId
         {
             get =>
